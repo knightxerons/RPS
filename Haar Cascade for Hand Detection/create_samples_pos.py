@@ -23,7 +23,7 @@ for i in pos_path:
        os.makedirs("./temp")
     b=pos+'/'+i
 
-    cmd = "opencv_createsamples -img {} -bg bg.txt -info temp/tinfo.lst  -pngoutput info -maxxangle 0.6 -maxyangle 0.6 -maxzangle0.6 -num 1000 > /dev/null 2>&1".format(b)
+    cmd = "opencv_createsamples -img {} -bg bg.txt -info temp/tinfo.lst  -pngoutput info -maxxangle 0.6 -maxyangle 0.6 -maxzangle0.6 -num 2000 > /dev/null 2>&1".format(b)
     os.system(cmd)
 
     temp_path = os.listdir("./temp")
@@ -37,9 +37,8 @@ for i in pos_path:
             os.system(cmd)
             cmd = "cat ./temp/{} >> ./info/info.lst".format(j)
             os.system(cmd)
-
     os.system("rm -rf ./temp")
-    
+
     a+=1
 
 print("Samples created!!!")
